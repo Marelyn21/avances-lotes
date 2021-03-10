@@ -1,0 +1,19 @@
+.caja{
+	position: relative;
+	display: inline-block;
+}
+
+.texto1{
+	position: absolute;
+	top: 10px;
+	left: 10%;
+	font-family: Georgia;
+	font-size: 22px;
+}
+
+.modal-body{
+	display: block;
+	height: 300px;
+	overflow-y: auto;
+}
+
