@@ -1,0 +1,60 @@
+.caja{
+	position: relative;
+	display: inline-block;
+}
+
+.texto1{
+	position: absolute;
+	top: 10px;
+	left: 10%;
+	font-family: Georgia;
+	font-size: 22px;
+	font-weight: bold;
+	color: #117A65 ;
+}
+
+body {
+	background-image: url("fracc.jpg") ;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+.modal-header{
+	background:#148F77;
+	color:whitesmoke ;
+}
+
+.modal-body{
+	display: inline-block;
+	height: 300px;
+	overflow-y: auto;
+	background:#D4E6F1; 
+}
+.container{
+	float: right;
+}
+
+.container, img{
+	border-radius: 3%;
+}
+
+h1{
+	color:black;
+	font-family:Georgia, 'Times New Roman', Times, serif;
+	font-weight: 900;
+}
+
+h4{
+	font-style:oblique;
+}
+
+h2{
+	font-family:sans-serif;
+	font-weight: bold;
+}
+@media screen (max-width: 480px){
+	form{
+		width: 100%;
+	}
+}
