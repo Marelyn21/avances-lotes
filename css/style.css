@@ -1,0 +1,89 @@
+/*#svg{
+    margin-top: 300px;
+    transform: rotateZ(180deg);
+}*/
+#wrapper{
+    width: 80%;
+}
+/*-------------------------------------SVG CSS-------------------------------------------*/
+
+.st0{fill:#FFFFFF;
+    stroke:#000000;
+    stroke-width:3;
+    stroke-miterlimit:10;
+}
+.st0:hover{
+    fill: rgb(100, 172, 240);
+}
+.st1{
+    fill:#000000;
+}
+.st2{
+    font-family:'MyriadPro-Regular';
+}
+.st3{
+    font-size:12px;
+    fill: rgb(255, 255, 255);
+    font: bold;
+}
+.st4{
+    fill:none;
+    stroke:#000000;
+    stroke-width:3;
+    stroke-miterlimit:10;
+}
+.st5{
+    font-size:24px;
+}
+.st6{
+    fill:none;
+}
+/*---------------------------------------CSS del header-------------------------------------------------------------*/
+.header{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: 
+    "log nav";
+    width: 75%;
+    height: 130px;
+    
+}
+.logo{
+    margin-top: 45px;
+    grid-area: log;
+}
+.menu{
+    grid-area: nav;
+}
+.menu a{
+    letter-spacing: 3px;
+    font-size: 16px;
+    padding: 15px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    text-align: center; 
+}
+.menu ul> li{
+    display: block;
+    text-align: right;
+}
+.menu a:hover{
+    color: rgb(100, 172, 240);
+}
+.menu > ul{
+    display: grid;
+    grid-column-gap: 15px;
+    grid-template-columns: 10% 20% 35% 20% 15%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    list-style: none;
+}
+/*--------------------------------------Body------------------------------------------------------------------------*/
+h1{
+text-align: center;
+}
+body{
+    margin-left: 200px;
+}
