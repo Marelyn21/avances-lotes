@@ -1,0 +1,164 @@
+/*Seudoselectores*/
+:root{
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #199EB8;
+    --secundario: #e04f00;
+    --backgroundd: #166271;
+    --gris: #757575;
+    --grisClaro: #dfe9f3;
+}
+
+/* Globales */
+html{
+    font-size: 62.5%;
+    box-sizing: border-box; /*Hack para boxmodel*/
+    scroll-snap-type: y mandatory; /*Agregarle scroll a la pagina, x,y depende si es horizontal o vetical*/
+
+}
+
+body{
+    font-size: 16px; /*1rem ==10px*/
+    font-family: 'Krub', sans-serif;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+#wrapper{
+    width: 80%;
+}
+
+/*Tipografía*/
+h1{
+    font-size: 5rem ;
+}
+
+h2{
+    font-size: 2.8rem ;
+}
+
+h3{
+    font-size: 1.8rem ;
+}
+
+h1,h2,h3{
+    text-align: center;
+}
+
+
+/*Navegacion principal*/
+
+.nav-bg{
+    background-color: var(--primario); /*Para que se aplique a toda la fila*/
+}
+
+.navegacion-principal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.navegacion-principal a{
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 2rem;
+}
+
+.navegacion-principal a:hover{
+    background-color: var(--secundario);
+    color: var(--oscuro);
+}
+
+.contenedor{
+    margin: 0rem auto;
+    max-width: 120rem;  
+}
+
+
+/*Footer*/
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primario);
+    padding: 1rem;
+    font-weight: bold;
+    color: var(--blanco);
+    letter-spacing: 2px;
+}
+
+
+/*-------------------------------------SVG CSS Desierto 1-------------------------------------------*/
+
+.st0{fill:#FFFFFF;
+    stroke:#000000;
+    stroke-width:3;
+    stroke-miterlimit:10;
+}
+.st0:hover{
+    fill: rgb(100, 172, 240);
+}
+.st1{
+    fill:#000000;
+}
+.st2{
+    font-family:'MyriadPro-Regular';
+}
+.st3{
+    font-size:12px;
+    fill: rgb(255, 255, 255);
+    font: bold;
+}
+.st4{
+    fill:none;
+    stroke:#000000;
+    stroke-width:3;
+    stroke-miterlimit:10;
+}
+.st5{
+    font-size:24px;
+}
+.st6{
+    fill:none;
+}
+
+/*-------------------------------------SVG CSS Desierto 2-------------------------------------------*/
+.cls-1 {
+    fill: #fdfcfb;
+  }
+  .cls-1:hover{
+    fill: rgb(100, 172, 240);
+}
+  .cls-1, .cls-2, .cls-4, .cls-5 {
+    stroke: #000;
+  }
+
+  .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+    stroke-miterlimit: 10;
+  }
+
+  .cls-1, .cls-4 {
+    stroke-width: 1.25px;
+  }
+
+  .cls-2 {
+    stroke-width: 2px;
+  }
+
+  .cls-3 {
+    fill: #fff;
+    stroke: #fff;
+  }
+
+  .cls-4, .cls-5 {
+    fill: none;
+  }
+
+
