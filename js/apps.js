@@ -79,6 +79,30 @@ function funcModal(){
     contenido.innerHTML=`
     <div class="modalContenido">
     <spawn>Diste click en el ${atri}</spawn>
+    <p><center><h5>Cluster Marbella "Primera parte"</h5></center><br><center><h5>Precio: </h5> $70,000<br><h5>Información: </h5> ¡No lo pienses más y <b>aparta tu terreno</b> 
+                 con solo <b>$5,000</b>!. Somos una gran empresa dedicada al manejo y selección del 
+                    mejor lugar para tu vivienda, confía en GrupoViv y no dejes pasar esta oportunidad.<br><br>
+                    <li>Compra ahora en Marzo y paga
+                        la primera mensualidad hasta Abril.</li>
+                    <li>25% de descuento para propiedades pagadas de contado</li>
+                    <li>Aplica para todas las operaciones a crédito realizadas en Marzo 2021</li><br>
+                    </p>
+                    <div class="paypal">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_xclick">
+                            <input type="hidden" name="business" value="marelynortiz0398@gmail.com">
+                            <input type="hidden" name="lc" value="MX">
+                            <input type="hidden" name="item_name" value="Terreno 1">
+                            <input type="hidden" name="item_number" value="1">
+                            <input type="hidden" name="amount" value="70000.00">
+                            <input type="hidden" name="currency_code" value="MXN">
+                            <input type="hidden" name="button_subtype" value="services">
+                            <input type="hidden" name="no_note" value="0">
+                            <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+                            <center><input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea."></center>
+                            <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+                    </div>  
     </div>
     `;
     /**

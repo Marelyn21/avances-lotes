@@ -347,3 +347,11 @@
   [hidden] {
     display: none;
   }
+
+  /*Scroll modal*/
+
+  .modal-body{
+    display: block;
+    height: 300px;
+    overflow-y: auto;
+  }
