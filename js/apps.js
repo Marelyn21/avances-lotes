@@ -90,12 +90,17 @@ function funcModal(){
      */
     var atri =this.getAttribute('id');
     lotes=JSON.parse(localStorage.getItem('Lotes'));
+    let slote;
     lotes.forEach(lote => {
         if(lote['id']==atri){
-            console.log(lote);
-        }
-        
+            slote = lote;
+        }        
     });
+    console.log(slote);
+    console.log(slote['id']);
+    console.log(parseInt(slote['area'],10));
+    console.log(slote['estatus']);
+    console.log(slote['desierto']);
     /**
      * Creacion de un elemento en el cual pondremos la informacion del modal
      */
