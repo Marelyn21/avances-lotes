@@ -1,4 +1,23 @@
 /**
+ * Funcion consume PHP y guarda en local storage para consumir despues 
+ */
+
+document.addEventListener('DOMContentLoaded',function (event) {
+    var url = '../php/consumirJson.php';
+    var formu = new FormData();
+    formu.append("des",1);
+     fetch(url, {
+    method: 'POST', // or 'PUT'
+    body: formu, // data can be `string` or {object}
+    }).then(res => res.json())
+    .then(data => {
+        localStorage.setItem('Lotes',JSON.stringify(data));
+    })
+    .catch(error => {
+        console.error(error);
+    });    
+})
+/**
  * obtenemos todos los Lotes con sus respectivo ID
  */
 var a = document.getElementById('Lote8');
@@ -59,6 +78,7 @@ y.addEventListener("click",funcModal,false);
 z.addEventListener("click",funcModal,false);
 a1.addEventListener("click",funcModal,false);
 function funcModal(){
+    let lotes;
     /* obtener el id del div donde se inserta la informacion */
     var mod = document.getElementById('contenido');
     /** revisa si tiene contenido alguno si lo tiene lo elimina */
@@ -69,6 +89,13 @@ function funcModal(){
      * obtenemos el id del objeto que invoca la funcion 
      */
     var atri =this.getAttribute('id');
+    lotes=JSON.parse(localStorage.getItem('Lotes'));
+    lotes.forEach(lote => {
+        if(lote['id']==atri){
+            console.log(lote);
+        }
+        
+    });
     /**
      * Creacion de un elemento en el cual pondremos la informacion del modal
      */
@@ -110,3 +137,18 @@ function funcModal(){
      */
     mod.appendChild(contenido);
 }
+/*
+function consumePHP(numlot) {
+    var url = '../php/consumirJson.php';
+    var formu = new FormData();
+    formu.append("des",numlot);
+     fetch(url, {
+    method: 'POST', // or 'PUT'
+    body: formu, // data can be `string` or {object}
+    }).then(res => res.json())
+    .then(data => {return data;})
+    .catch(error => {
+        console.error(error);
+    });
+    
+}*/

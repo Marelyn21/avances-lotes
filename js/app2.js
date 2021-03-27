@@ -1,5 +1,5 @@
 /*var xhr = new XMLHttpRequest();
-xhr.open('GET','../php/consumirJson.php');
+xhr.open('POST','../php/consumirJson.php');
 xhr.onload=function(){
     if(xhr.status==200){
         var js = xhr.responseText;
@@ -10,15 +10,13 @@ xhr.onload=function(){
 }
 xhr.send();
 console.log('hey');*/
+
 var url = '../php/consumirJson.php';
-var data = {descierto: 1};
+var formu = new FormData();
+formu.append("des",2);
 
 fetch(url, {
   method: 'POST', // or 'PUT'
-  body: JSON.stringify(data), // data can be `string` or {object}!
-  headers:{
-    'Content-Type': 'application/json'
-  }
+  body: formu, // data can be `string` or {object}
 }).then(res => res.json())
-.catch(error => console.error('Error:', error))
-.then(response => console.log('Success:', response));
+.then(data => console.log(data))
