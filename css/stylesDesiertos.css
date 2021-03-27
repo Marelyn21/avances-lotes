@@ -13,8 +13,8 @@
 html{
     font-size: 62.5%;
     box-sizing: border-box; /*Hack para boxmodel*/
-    scroll-snap-type: y mandatory; /*Agregarle scroll a la pagina, x,y depende si es horizontal o vetical*/
-
+   /* scroll-snap-type: y mandatory; /*Agregarle scroll a la pagina, x,y depende si es horizontal o vetical*/
+    scroll-behavior: smooth;
 }
 
 body{

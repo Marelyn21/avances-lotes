@@ -13,8 +13,8 @@
 html{
     font-size: 62.5%;
     box-sizing: border-box; /*Hack para boxmodel*/
-    scroll-snap-type: y mandatory; /*Agregarle scroll a la pagina, x,y depende si es horizontal o vetical*/
-
+    /* scroll-snap-type: y mandatory; /*Agregarle scroll a la pagina, x,y depende si es horizontal o vetical*/
+    scroll-behavior: smooth;
 }
 
 body{
@@ -206,7 +206,7 @@ como usamos column, se usa align-items*/
 
 .imagen2{
     width: 500px;
-    margin-top: 2rem;
+    margin-top: auto;
     margin-left: 1rem;
     margin-right: 1rem;
 }
