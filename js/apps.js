@@ -101,6 +101,7 @@ function funcModal(){
     console.log(parseInt(slote['area'],10));
     console.log(slote['estatus']);
     console.log(slote['desierto']);
+    console.log(calcA(parseInt(slote['area'],10),10));
     /**
      * Creacion de un elemento en el cual pondremos la informacion del modal
      */
@@ -142,18 +143,6 @@ function funcModal(){
      */
     mod.appendChild(contenido);
 }
-/*
-function consumePHP(numlot) {
-    var url = '../php/consumirJson.php';
-    var formu = new FormData();
-    formu.append("des",numlot);
-     fetch(url, {
-    method: 'POST', // or 'PUT'
-    body: formu, // data can be `string` or {object}
-    }).then(res => res.json())
-    .then(data => {return data;})
-    .catch(error => {
-        console.error(error);
-    });
-    
-}*/
+function calcA(ar,precio) {
+    return ar*precio;
+}
