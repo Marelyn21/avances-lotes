@@ -13,7 +13,6 @@
 html{
     font-size: 62.5%;
     box-sizing: border-box; /*Hack para boxmodel*/
-    /* scroll-snap-type: y mandatory; /*Agregarle scroll a la pagina, x,y depende si es horizontal o vetical*/
     scroll-behavior: smooth;
 }
 
@@ -81,7 +80,7 @@ h1,h2,h3{
 /*imagenlotes*/
 
 .imgLote{
-    background-image: url(/img/Lotesimg.jpg) ;
+    background-image: url('../img/Lotesimg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 550px;
@@ -136,42 +135,44 @@ h1,h2,h3{
     border-radius: 1rem;
 }
 
-/*SE hacen responsivas*/
-/* 
-@media (min-width: 768px){
-    .nosotros{
-        display: grid; 
-        grid-template-columns: repeat(3,1fr);
-        column-gap: 1rem;
-    }
-}*/
-
-/*No se hace responsiva*/
-
-.nosotros{
-    display: grid; 
-    grid-template-columns: repeat(3,1fr);
-    column-gap: 1rem;
+.logo1{
+    grid-area: L1;
+}
+.logo2{
+    grid-area: L2;
+}
+.logo3{
+    grid-area: L3;
 }
 
-/* habilitamos flex
-cambiamos la direción a columnas
-como usamos column, se usa align-items*/
-.miviva {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/*titulo de los servicios*/
-.miviva h3{
+.logo1 h3,.logo2 h3,.logo3 h3{
     color: var(--secundario);
     font-weight: bold;
 }
 
-.miviva p{
-    line-height: 2;
+.text1{
+    grid-area: T1;
+}
+.text2{
+    grid-area: T2;
+}
+.text3{
+    grid-area: T3;
+}
+
+.text1 p,.text2 p,.text3 p{
+    line-height: 1.2;
     text-align: center;
+}
+
+.nosotros_grid{
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+    'L1 L2  L3'
+    'T1 T2  T3';
 }
 
 .iconos{
@@ -182,6 +183,7 @@ como usamos column, se usa align-items*/
     display: flex; /*posiciona los elementos uno frente al otro*/
     justify-content: space-evenly; /*centra horizontal*/
     align-items: center; /*centra vertical*/
+    margin: 0 auto;
 }
 
 /*Planos*/
@@ -200,15 +202,8 @@ como usamos column, se usa align-items*/
 .desierto a{
     text-decoration: none;
 }
-.imagen1{
+.imagen1,.imagen2{
     width: 100%;
-}
-
-.imagen2{
-    width: 500px;
-    margin-top: auto;
-    margin-left: 1rem;
-    margin-right: 1rem;
 }
 
 .d_nombre{
@@ -296,4 +291,49 @@ como usamos column, se usa align-items*/
     font-weight: bold;
     color: var(--blanco);
     letter-spacing: 2px;
+}
+
+/*Resposive CSS*/
+
+/*Laptop*/
+@media (max-width: 1024px){
+    html{
+        font-size: 60%;
+    }
+    .imgLote{
+        height: 54.375rem;
+    }
+}
+
+/*Tablet*/
+@media (max-width: 768px){
+    html{
+        font-size: 50%;
+    }
+    .imgLote{
+        height: 24.375em;
+    }
+    .nosotros_grid{
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+        'L1 T1  T1'
+        'L2 T2  T2'
+        'L3 T3  T3';
+    }
+    .grid{
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(1, 1fr);
+        gap:2rem;
+    }
+}
+
+/*Phone*/
+@media (max-width: 425px){
+    html{
+        font-size: 35%;
+    }
+    .imgLote{
+        height: 17.375em;
+    }
 }
