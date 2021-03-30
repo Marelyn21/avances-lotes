@@ -60,7 +60,7 @@ function funcModal(){
      */
     contenido.innerHTML=`
     <div class="modalContenido">
-    <spawn>Diste click en el ${atri}</spawn>
+    <spawn>Diste click en el ${slote['id']}</spawn>
     <p><center><h5>Cluster Marbella "Primera parte"</h5></center><br><center><h5>Precio: </h5> $70,000<br><h5>Información: </h5> ¡No lo pienses más y <b>aparta tu terreno</b> 
                  con solo <b>$5,000</b>!. Somos una gran empresa dedicada al manejo y selección del 
                     mejor lugar para tu vivienda, confía en GrupoViv y no dejes pasar esta oportunidad.<br><br>
