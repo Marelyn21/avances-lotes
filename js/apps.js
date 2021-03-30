@@ -1,11 +1,20 @@
 /**
  * Funcion consume PHP y guarda en local storage para consumir despues 
  */
-
 document.addEventListener('DOMContentLoaded',function (event) {
+    let bod = document.getElementsByTagName("body").item(0);
+    let d=0;
+    if(bod.getAttribute('id')=='D1'){
+        d=1;
+        
+    }
+    if(bod.getAttribute('id')=='D2'){
+        d=2;
+        
+    }
     var url = '../php/consumirJson.php';
     var formu = new FormData();
-    formu.append("des",1);
+    formu.append("des",d);
      fetch(url, {
     method: 'POST', // or 'PUT'
     body: formu, // data can be `string` or {object}
@@ -16,67 +25,15 @@ document.addEventListener('DOMContentLoaded',function (event) {
     .catch(error => {
         console.error(error);
     });    
-})
+});
+var l = document.getElementsByClassName('lote');
+for(var i=0;i<l.length;i++){
+    l[i].addEventListener('click',funcModal,false);
+}
 /**
  * obtenemos todos los Lotes con sus respectivo ID
  */
-var a = document.getElementById('Lote8');
-var b = document.getElementById('Lote7');
-var c = document.getElementById('Lote_9');
-var d = document.getElementById('Lote13');
-var e = document.getElementById('Lote_15');
-var f = document.getElementById('Lote_16');
-var g = document.getElementById('Lote_17');
-var h = document.getElementById('Lote19');
-var i = document.getElementById('Lote18');
-var j = document.getElementById('Lote20');
-var k = document.getElementById('Lote24');
-var l = document.getElementById('Lote25');
-var m = document.getElementById('Lote26');
-var n = document.getElementById('Lote21');
-var o = document.getElementById('Lote23');
-var p = document.getElementById('Lote22');
-var q = document.getElementById('Lote_12');
-var r = document.getElementById('Lote11');
-var s = document.getElementById('Lote10');
-var t = document.getElementById('Lote_14');
-var u = document.getElementById('Lote7');
-var v = document.getElementById('Lote_6');
-var w = document.getElementById('Lote5');
-var x = document.getElementById('Lote1');
-var y = document.getElementById('Lote2');
-var z = document.getElementById('Lote4');
-var a1 = document.getElementById('Lote3');
-/**
- * Agregamos el un event listener 
- */
-a.addEventListener("click",funcModal,false);
-b.addEventListener("click",funcModal,false);
-c.addEventListener("click",funcModal,false);
-d.addEventListener("click",funcModal,false);
-e.addEventListener("click",funcModal,false);
-f.addEventListener("click",funcModal,false);
-g.addEventListener("click",funcModal,false);
-h.addEventListener("click",funcModal,false);
-i.addEventListener("click",funcModal,false);
-j.addEventListener("click",funcModal,false);
-k.addEventListener("click",funcModal,false);
-l.addEventListener("click",funcModal,false);
-m.addEventListener("click",funcModal,false);
-n.addEventListener("click",funcModal,false);
-o.addEventListener("click",funcModal,false);
-p.addEventListener("click",funcModal,false);
-q.addEventListener("click",funcModal,false);
-r.addEventListener("click",funcModal,false);
-s.addEventListener("click",funcModal,false);
-t.addEventListener("click",funcModal,false);
-u.addEventListener("click",funcModal,false);
-v.addEventListener("click",funcModal,false);
-w.addEventListener("click",funcModal,false);
-x.addEventListener("click",funcModal,false);
-y.addEventListener("click",funcModal,false);
-z.addEventListener("click",funcModal,false);
-a1.addEventListener("click",funcModal,false);
+
 function funcModal(){
     let lotes;
     /* obtener el id del div donde se inserta la informacion */
@@ -96,6 +53,7 @@ function funcModal(){
             slote = lote;
         }        
     });
+    
     console.log(slote);
     console.log(slote['id']);
     console.log(parseInt(slote['area'],10));
