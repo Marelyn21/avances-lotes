@@ -3,18 +3,9 @@
  */
 document.addEventListener('DOMContentLoaded',function (event) {
     let bod = document.getElementsByTagName("body").item(0);
-    let d=0;
-    if(bod.getAttribute('id')=='D1'){
-        d=1;
-        
-    }
-    if(bod.getAttribute('id')=='D2'){
-        d=2;
-        
-    }
     var url = '../php/consumirJson.php';
     var formu = new FormData();
-    formu.append("des",d);
+    formu.append("des",1);
      fetch(url, {
     method: 'POST', // or 'PUT'
     body: formu, // data can be `string` or {object}
