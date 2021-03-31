@@ -162,3 +162,70 @@ h1,h2,h3{
   }
 
 
+/*Resposive CSS*/
+
+/*Laptop*/
+@media (max-width: 1024px){
+    html{
+        font-size: 60%;
+    }
+
+    .modal{
+        min-width: 280px;
+
+        /*Medidas del modal*/
+        max-width: 80%;
+        max-height: 80%;
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        border-radius: 6px;
+    }
+}
+
+/*Tablet*/
+@media (max-width: 768px){
+    html{
+        font-size: 50%;
+    }
+
+    .modal{
+        min-width: 280px;
+        max-width: 80%;
+        max-height: 80%;
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        border-radius: 6px;
+    }
+
+}
+
+/*Phone*/
+@media (max-width: 425px){
+    html{
+        font-size: 35%;
+    }
+
+    .modal{
+        min-width: 280px;
+        max-width: 80%;
+        max-height: 80%;
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        border-radius: 6px;
+    }
+}
