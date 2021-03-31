@@ -158,6 +158,11 @@ h1,h2,h3{
     letter-spacing: 2px;
 }
 
+.wraper{
+    align-items: center;
+    margin: 0 auto;
+}
+
 
 /*-------------------------------------SVG CSS Desierto 1-------------------------------------------*/
 
