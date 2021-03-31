@@ -305,14 +305,7 @@ h1,h2,h3{
     }
 }
 
-/*Tablet*/
-@media (max-width: 768px){
-    html{
-        font-size: 50%;
-    }
-    .imgLote{
-        height: 24.375em;
-    }
+@media (max-width: 784px){
     .nosotros_grid{
         grid-template-columns: repeat(3, auto);
         grid-template-rows: repeat(3, auto);
@@ -326,6 +319,17 @@ h1,h2,h3{
         grid-template-rows: repeat(1, 1fr);
         gap:2rem;
     }
+}
+
+/*Tablet*/
+@media (max-width: 768px){
+    html{
+        font-size: 50%;
+    }
+    .imgLote{
+        height: 24.375em;
+    }
+    
 }
 
 /*Phone*/
