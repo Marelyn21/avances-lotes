@@ -1,0 +1,20 @@
+.modal-header{
+    background: #199EB8;
+    color: white;
+}
+
+.modal-body{
+    background: #dfe9f3;
+}
+
+.modal-footer{
+    background: #199EB8;
+}
+
+.modal-footer button{
+    height: 8mm;
+    width: 22mm;
+    border: black 2px solid;
+    border-radius: 1mm;
+    font-size: small;
+}
