@@ -23,6 +23,6 @@ if(isset($_POST['lote'])){
     }
     $js =json_encode($contentsDecodedA);
     file_put_contents('../Json/JsonD1.json',$js);
-
+    echo json_encode('done');
 }
 ?>

@@ -1,6 +1,35 @@
 /**
  * Funcion consume PHP y guarda en local storage para consumir despues 
  */
+
+function actuali(){ 
+    
+    let lotes;
+    let loteM
+      /**
+     * obtenemos el id del objeto que invoca la funcion 
+     */
+    
+    var atri =document.getElementById('NumLote').getAttribute('value');   
+    lotes=JSON.parse(localStorage.getItem('Lotes'));    
+    lotes.forEach(lote => {
+        if(lote['id']==atri){
+            lote['estatus']=2;
+            loteM=lote;
+        }        
+    });
+    var d = JSON.stringify(loteM);
+    var url = '../php/consumirJson.php';
+    var formu = new FormData();
+    formu.append("lote",d);
+     fetch(url, {
+    method: 'POST', // or 'PUT'
+    body: formu, // data can be `string` or {object}
+    }).then(res => console.log(res.json()))
+    .catch(error => {
+        console.error(error);
+    }); 
+}
 document.addEventListener('DOMContentLoaded',function (event) {
     let bod = document.getElementsByTagName("body").item(0);
     var url = '../php/consumirJson.php';
@@ -26,6 +55,7 @@ for(var i=0;i<l.length;i++){
  */
 
 function funcModal(){
+
     let lotes;
     /* obtener el id del div donde se inserta la informacion */
     var mod = document.getElementById('contenido');
@@ -44,13 +74,9 @@ function funcModal(){
             slote = lote;
         }        
     });
+    var btnup = document.getElementById('btncomprar');
+    btnup.addEventListener('click',actuali,false);
     
-    console.log(slote);
-    console.log(slote['id']);
-    console.log(parseInt(slote['area'],10));
-    console.log(slote['estatus']);
-    console.log(slote['desierto']);
-    console.log(calcA(parseInt(slote['area'],10),10));
     /**
      * Creacion de un elemento en el cual pondremos la informacion del modal
      */
@@ -60,7 +86,7 @@ function funcModal(){
      */
     contenido.innerHTML=`
     <div class="modalContenido">
-    <p><center><h2>Cluster Marbella "Desierto ${slote['desierto']}" </h2></center><br><center><h3><b>${slote['id']}</b></h3></center><br><center>Información: </center><br><b>Área:</b> ${parseInt(slote['area'],10)}<br>
+    <p><center><h2>Cluster Marbella "Desierto ${slote['desierto']}" </h2></center><br><center><h3 id='NumLote' value='${slote['id']}'><b>${slote['id']}</b></h3></center><br><center>Información: </center><br><b>Área:</b> ${parseInt(slote['area'],10)}<br>
     <b>Precio total:</b> ${calcA(parseInt(slote['area'],10),10)}<br><br>  ¡No lo pienses más y <b>aparta tu terreno</b> 
                  con solo <b>$5,000</b>!. Somos una gran empresa dedicada al manejo y selección del 
                     mejor lugar para tu vivienda, confía en GrupoViv y no dejes pasar esta oportunidad.<br><br>
@@ -81,8 +107,6 @@ function funcModal(){
                             <input type="hidden" name="button_subtype" value="services">
                             <input type="hidden" name="no_note" value="0">
                             <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
-                            <center><input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea."></center>
-                            <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
                             </form>
                     </div>  
     </div>
@@ -91,6 +115,7 @@ function funcModal(){
      * Agregamos el contenido al nodo seleccionado anteriro mente 
      */
     mod.appendChild(contenido);
+
 }
 function calcA(ar,precio) {
     return ar*precio;
