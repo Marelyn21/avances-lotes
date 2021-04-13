@@ -455,10 +455,53 @@
 
 		<!--Footer-->
 
-		<footer class="footer">
+		<footer id="contacta" class="footer">
+
+			<!--Formulario contacto-->
+			<section>
+				<h2>Contacto</h2>
+				<form action="" class="formulario">
+					<!-- Cuando usas fieldset(grupo de campos), debes usar legend
+				para darle indicaciones al usuario-->
+					<fieldset>
+						<legend>Contáctanos llenando todos los campos</legend>
+						<!--El div sirve para posicionar los elementos en vertical -->
+						<div class="contenedor-campos">
+							<div class="campo">
+								<label>Nombre</label>
+								<!--email,radio,tel,checkbox,number
+					placeholder va a poner texto dentro del campo 
+				y se borrará cuando empiece a escribir-->
+								<input class="input-text" type="text" placeholder="Tu nombre">
+							</div>
+	
+							<div class="campo">
+								<label>Teléfono</label>
+								<input class="input-text" type="tel" placeholder="Tu teléfono">
+							</div>
+	
+							<div class="campo">
+								<label>Correo</label>
+								<input class="input-text" type="email" placeholder="Tu email">
+							</div>
+	
+							<div class="campo">
+								<label>Mensaje</label>
+								<textarea class="input-text"></textarea>
+							</div>
+						</div>
+						<!--contenedor de los campos-->
+						<div class="alinear-derecha flex">
+							<!--EL VALUE ES LO QUE SE PONDRÁ EN EL CAMPO-->
+							<input class="boton w-100" type="submit" value="Enviar">
+						</div>
+	
+					</fieldset>
+				</form>
+			</section>	
+
 			<p>Todos los derechos reservados</p>
 		</footer>
-
 
 
 		<!-- Button trigger modal 
