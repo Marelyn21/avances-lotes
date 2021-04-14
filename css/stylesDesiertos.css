@@ -183,7 +183,12 @@ h1,h2,h3{
 .st0:hover{
     fill: rgb(100, 172, 240);
 }
-
+.vendido{
+    fill: #FFFFFF;
+}
+.vendido:hover{
+    fill: #e04f00;
+}
 .st1{
     fill:#000000;
 }
