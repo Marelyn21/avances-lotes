@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded',function (event) {
     })
     .catch(error => {
         console.error(error);
-    });    
-});
+    });
+    
 var l = document.getElementsByClassName('lote');
 for(var i=0;i<l.length;i++){
     l[i].addEventListener('click',funcModal,false);
@@ -53,6 +53,31 @@ for(var i=0;i<l.length;i++){
 /**
  * obtenemos todos los Lotes con sus respectivo ID
  */
+ 
+ lotes=JSON.parse(localStorage.getItem('Lotes'));
+ var id=0;
+ let a;
+for(var i=0;i<44;i++){
+    if(lotes[i]['estatus']==2){
+        id =lotes[i]['id'];        
+        if(document.getElementById(id)){
+            a=document.getElementById(id);
+            console.log(a.childNodes[1]);
+            a.childNodes[1].classList.add('vendido');
+        }
+        
+        /*
+        console.log(l[i].getAttribute('id'));  
+             
+        a.childNodes[1].classList.add('vendido');
+/*        
+    a.childNodes[1].classList.add('vendido');*/
+    }
+}
+
+});
+ 
+
 
 function funcModal(){
 
